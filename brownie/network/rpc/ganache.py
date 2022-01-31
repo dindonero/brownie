@@ -68,7 +68,7 @@ def launch(cmd: str, **kwargs: Dict) -> None:
                     InvalidArgumentWarning,
                 )
                 
-    cmd_list['allowUnlimitedContractSize'] = '--allowUnlimitedContractSize'
+    cmd_list.append('--allowUnlimitedContractSize')
     print(f"\nLaunching '{' '.join(cmd_list)}'...")
     out = DEVNULL if sys.platform == "win32" else PIPE
     
