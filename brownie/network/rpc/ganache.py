@@ -67,8 +67,11 @@ def launch(cmd: str, **kwargs: Dict) -> None:
                     f'"{key}" with value "{value}".',
                     InvalidArgumentWarning,
                 )
+                
+    cmd_list['allowUnlimitedContractSize'] = '--allowUnlimitedContractSize'
     print(f"\nLaunching '{' '.join(cmd_list)}'...")
     out = DEVNULL if sys.platform == "win32" else PIPE
+    
 
     return psutil.Popen(cmd_list, stdin=DEVNULL, stdout=out, stderr=out)
 
